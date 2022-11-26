@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div>
+        {% for dish in dishes %}
+            <div>
+                {{dish.title}}
+                {{dish.description}}
+                {{dish.products}}
+                {{dish.recipe}}
+                {{dish.category}}
+                {{dish.image}}
+                <img src="static/images/{{dish.image}}">
+            </div>
+        {% endfor %}
+        {% for category in categories %}
+            <option value={{category.title}}>{{category.title}}</option>
+        {% endfor %}
+        <form action="new_dish" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" placeholder="Название блюда" name="title" />
+            <input type="text" placeholder="Описание блюда" name="description" />
+            <input type="text" placeholder="Список продуктов" name="products" />
+            <input type="text" placeholder="Рецепт" name="recipe" />
+            <input type="file" name="image" />
+            <select name="select">
+                {% for category in categories %}
+                    <option value={{category.id}}>{{category.title}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Записать блюда" />
+        </form>
+    </div>
+{% endblock %}
