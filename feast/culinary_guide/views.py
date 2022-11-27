@@ -115,3 +115,42 @@ def export(request):
     tree = ET.ElementTree(data)
     tree.write('dish.xml', encoding="UTF-8")
     return HttpResponseRedirect('/')
+
+
+def edit_dish(request, id):
+    dish = Dishes.objects.get(id=id)
+    return render(request, 'edit_dish.html', {'dish': dish})
+
+def new_category(request):
+    title = request.POST.get('text')
+    print('title', title)
+    category = Categories()
+    category.title = title
+    category.save()
+    return HttpResponseRedirect('/my_recipes')
+
+
+def save_edit_dish(request, id):
+    dish = Dishes.objects.get(id=id)
+    title = request.POST.get('title')
+    description = request.POST.get('description')
+    products = request.POST.get('products')
+    recipe = request.POST.get('recipe')
+    if 'image' in request.FILES:
+        image = request.FILES['image']
+        fss = FileSystemStorage('culinary_guide/static/images')
+        saved_file = fss.save(image.name, image)
+        dish.image = 'images/' + image.name
+
+    dish.title = title
+    dish.description = description
+    dish.products = products
+    dish.recipe = recipe
+
+    dish.save()
+    return HttpResponseRedirect('/my_recipes')
+
+def delete_dish(request, id):
+    dish = Dishes.objects.get(id=id)
+    dish.delete()
+    return HttpResponseRedirect('/my_recipes')

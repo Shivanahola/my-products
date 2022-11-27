@@ -32,5 +32,8 @@ urlpatterns += [
     path('login', views.login_user, name='login'),
     path('logout', views.logout_user, name='logout'),
     path('dish_info/<int:id>', views.dish_info, name='dish_info'),
+    path('edit_dish/<int:id>', views.edit_dish, name='edit_dish'),
+    path('save_edit_dish/<int:id>', views.save_edit_dish, name='save_edit_dish'),
+    path('delete_dish/<int:id>', views.delete_dish, name='delete_dish'),
     path('export', views.export, name='export'),
 ]

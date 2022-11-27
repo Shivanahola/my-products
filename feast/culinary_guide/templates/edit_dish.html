@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}
+    Блюдо
+{% endblock %}
+{% block content %}
+<form action="/save_edit_dish/{{dish.id}}" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <textarea rows="3" cols="45" name="title">
+            {{dish.title}}
+            </textarea>
+        </div>
+        <div class="col-md-3 ms-auto">
+            {% if dish.user == user %}
+                <div>
+                    <input class="btn btn-primary btn-menu" type="submit" value="Записать блюда" />
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <img src={% static dish.image %}>
+            <input type="file" name="image" id="image" />
+        </div>
+    </div>
+    <div class="row el">
+        <h4>Описание блюда:</h4>
+        <textarea rows="10" cols="45" name="description">
+            {{dish.description}}
+        </textarea>
+    </div>
+    <div class="row el">
+        <h4>Ингредиенты:</h4>
+        <textarea rows="10" cols="45" name="products">
+            {{dish.products}}
+        </textarea>
+    </div>
+    <div class="row">
+        <h4>Рецепт:</h4>
+        <textarea rows="20" cols="45" name="recipe">
+            {{dish.recipe}}
+        </textarea>
+    </div>
+</div>
+    </form>
+{% endblock %}
