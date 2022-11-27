@@ -27,6 +27,16 @@ def bakery_productsl(request):
     return render(request, 'bakery_productsl.html', {'dishes': dishes})
 
 
+def salads(request):
+    dishes = Dishes.objects.filter(category=4)
+    return render(request, 'salads.html', {'dishes': dishes})
+
+
+def beverages(request):
+    dishes = Dishes.objects.filter(category=5)
+    return render(request, 'beverages.html', {'dishes': dishes})
+
+
 def my_recipes(request):
     dishes = Dishes.objects.filter(user=request.user.id)
     return render(request, 'my_recipes.html', {'dishes': dishes})
@@ -65,7 +75,7 @@ def registration(request):
         user = User.objects.create_user(name, email, password)
         user.last_name = 'Lennon'
         user.save()
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/login')
     else:
         return render(request, 'registration.html')
 
