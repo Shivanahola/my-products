@@ -88,12 +88,12 @@
     border: 1px double #A86540;
     text-decoration: none;
 }
-.t1{
-    text-decoration: none;
+.center{
+    margin: 50px
 }
 
 .new_dish{
-    width: 25vw;
+    width: 35vw;
     margin: 0 auto;
 }
 
@@ -101,7 +101,7 @@
     width: 130px;
 }
 .foto{
-    width: 50vw;
+    width: 40vw;
 }
 
 .el{

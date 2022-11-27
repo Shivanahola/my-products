@@ -6,7 +6,7 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row el">
         <div class="col-md-6">
             <h2>{{dish.title}}</h2>
         </div>
@@ -19,7 +19,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="row">
+    <div class="row el">
         <div>
             <img class="foto" src={% static dish.image %}>
         </div>
@@ -35,6 +35,10 @@
     <div class="row">
         <h4>Рецепт:</h4>
         <div>{{dish.recipe}}</div>
+    </div>
+
+    <p class="row">
+        <p>Автор:{{dish.user}}</p>
     </div>
 </div>
 

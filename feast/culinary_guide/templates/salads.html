@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div>
+    <div class="el">
         <h3>
             Салаты
         </h3>
@@ -20,7 +20,7 @@
         </p>
     </div>
     <div>
-        <div>
+        <div class="el">
             <h4>Список блюд:</h4>
         </div>
         <div class="d-flex flex-wrap">
@@ -34,6 +34,9 @@
                             <img class="image" src={% static dish.image %}>
                             <p>
                                 {{dish.description}}
+                            </p>
+                            <p>
+                                Автор: {{dish.user}}
                             </p>
                         </div>
                     </a>

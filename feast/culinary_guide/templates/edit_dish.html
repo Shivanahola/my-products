@@ -17,14 +17,14 @@
         <div class="col-md-3 ms-auto">
             {% if dish.user == user %}
                 <div>
-                    <input class="btn btn-primary btn-menu" type="submit" value="Записать блюда" />
+                    <input class="btn btn-primary btn-menu" type="submit" value="Записать блюдо" />
                 </div>
             {% endif %}
         </div>
     </div>
-    <div class="row">
+    <div class="row el">
         <div>
-            <img src={% static dish.image %}>
+            <img class="foto" src={% static dish.image %}>
             <input type="file" name="image" id="image" />
         </div>
     </div>

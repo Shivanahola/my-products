@@ -7,39 +7,39 @@
             {% csrf_token %}
             <div class="new_dish">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p>Название блюда:</p>
                     </div>
                     <div class="col-8">
-                        <textarea rows="1" cols="45" name="title"></textarea>
+                        <textarea rows="2" cols="70" name="title"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p>Описание блюда:</p>
                     </div>
                     <div class="col-8">
-                        <textarea rows="3" cols="45" name="description"></textarea>
+                        <textarea rows="5" cols="70" name="description"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p>Ингредиенты:</p>
                     </div>
                     <div class="col-8">
-                        <textarea rows="3" cols="45" name="products"></textarea>
+                        <textarea rows="5" cols="70" name="products"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p>Рецепт:</p>
                     </div>
                     <div class="col-8">
-                        <textarea rows="3" cols="45" name="recipe"></textarea>
+                        <textarea rows="5" cols="70" name="recipe"></textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-3">
                         <p>Добавить картинку:</p>
                     </div>
                     <div class="col-8">
@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4">
-                        <p>Добавить картинку:</p>
+                    <div class="col-3">
+                        <p>Добавить категорию:</p>
                     </div>
                     <div class="col-8">
                         <select name="select" id="select">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="submit" value="Записать блюда" />
+                    <input class="btn btn-primary btn-menu" type="submit" value="Записать блюдо" />
                 </div>
             </div>
         </form>
