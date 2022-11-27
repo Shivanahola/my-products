@@ -3,33 +3,65 @@
 
 {% block content %}
     <div>
-        {% for dish in dishes %}
-            <div>
-                {{dish.title}}
-                {{dish.description}}
-                {{dish.products}}
-                {{dish.recipe}}
-                {{dish.category}}
-                {{dish.image}}
-                <img src="static/images/{{dish.image}}">
-            </div>
-        {% endfor %}
-        {% for category in categories %}
-            <option value={{category.title}}>{{category.title}}</option>
-        {% endfor %}
         <form action="new_dish" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="text" placeholder="Название блюда" name="title" />
-            <input type="text" placeholder="Описание блюда" name="description" />
-            <input type="text" placeholder="Список продуктов" name="products" />
-            <input type="text" placeholder="Рецепт" name="recipe" />
-            <input type="file" name="image" />
-            <select name="select">
-                {% for category in categories %}
-                    <option value={{category.id}}>{{category.title}}</option>
-                {% endfor %}
-            </select>
-            <input type="submit" value="Записать блюда" />
+            <div class="new_dish">
+                <div class="row">
+                    <div class="col-4">
+                        <p>Название блюда:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea rows="1" cols="45" name="title"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Описание блюда:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea rows="3" cols="45" name="description"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Ингредиенты:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea rows="3" cols="45" name="products"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Рецепт:</p>
+                    </div>
+                    <div class="col-8">
+                        <textarea rows="3" cols="45" name="recipe"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Добавить картинку:</p>
+                    </div>
+                    <div class="col-8">
+                        <input type="file" name="image" id="image" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <p>Добавить картинку:</p>
+                    </div>
+                    <div class="col-8">
+                        <select name="select" id="select">
+                            {% for category in categories %}
+                                <option value={{category.id}}>{{category.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Записать блюда" />
+                </div>
+            </div>
         </form>
     </div>
 {% endblock %}

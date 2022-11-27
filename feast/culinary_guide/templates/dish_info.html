@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}
+    Блюдо
+{% endblock %}
+{% block content %}
+    <div>
+        <h4>{{dish.title}}</h4>
+    </div>
+    <img class="el" src={% static dish.image %}>
+    <div><h5>Описание блюда:</h5></div>
+    <div class="el">{{dish.description}}</div>
+    <div><h5>Ингредиенты:</h5></div>
+    <div class="el">{{dish.products}}</div>
+    <div><h5>Рецепт:</h5></div>
+    <div class="el">{{dish.recipe}}</div>
+
+
+
+{% endblock %}

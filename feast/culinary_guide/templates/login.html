@@ -17,7 +17,7 @@
       <form action="/login" method="POST">
           {% csrf_token %}
         <input type="text" class="form-control" placeholder="Логин" name="name" />
-        <input type="text" class="form-control" placeholder="Пароль" name="password" />
+        <input type="password" class="form-control" placeholder="Пароль" name="password" />
         <input type="submit" class="form-control btn-menu" value="Войти" />
         <div class="position-relative reg">
             <a class="link-secondary position-absolute top-50 start-50 translate-middle" role="button" href="/registration">Зарегистрироваться</a>

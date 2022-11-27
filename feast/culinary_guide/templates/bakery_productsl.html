@@ -19,11 +19,27 @@
         снаружи и мягкое внутри, сочная мясная, рыбная, овощная или сладкая начинка. В раздел объединены как
         простые блюда на каждый день, так и замысловатые, подходящие для особенных случаев.
     </div>
-    {% for dish in dishes %}
+    <div>
         <div>
-            {{dish.title}}
-            <img width="30px" src="static/images/{{dish.image}}">
-            {{dish.description}}
+            <h4>Список блюд:</h4>
         </div>
-    {% endfor %}
+        <div class="d-flex flex-wrap">
+            {% for dish in dishes %}
+                <div class="dish">
+                    <a href="/dish_info/{{dish.id}}" class="text-decoration-none text-reset">
+                        <div>
+                            <h4>
+                                {{dish.title}}
+                            </h4>
+                            <img class="image" src={% static dish.image %}>
+                            <p>
+                                {{dish.description}}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
 {% endblock %}

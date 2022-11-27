@@ -22,13 +22,15 @@ urlpatterns = [
     path('', views.index, name='home'),
 ]
 urlpatterns += [
-    path('', views.index, name='home'),
     path('first_meal', views.first_meal, name='first_meal'),
     path('main_dishes', views.main_dishes, name='main_dishes'),
     path('bakery_productsl', views.bakery_productsl, name='bakery_productsl'),
     path('registration', views.registration, name='registration'),
+    path('my_recipes', views.my_recipes, name='my_recipes'),
     path('add_dish', views.add_dish, name='add_dish'),
     path('new_dish', views.new_dish, name='new_dish'),
     path('login', views.login_user, name='login'),
     path('logout', views.logout_user, name='logout'),
+    path('dish_info/<int:id>', views.dish_info, name='dish_info'),
+    path('export', views.export, name='export'),
 ]

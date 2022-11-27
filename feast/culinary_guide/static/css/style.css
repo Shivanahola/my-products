@@ -80,6 +80,30 @@
     height: 20px;
 }
 
+.dish{
+    width: 23vw;
+    margin: 5px;
+    padding: 5px;
+    background-color: #FFECDA;
+    border: 1px double #A86540;
+    text-decoration: none;
+}
+.t1{
+    text-decoration: none;
+}
+
+.new_dish{
+    width: 25vw;
+    margin: 0 auto;
+}
+
+.image{
+    width: 130px;
+}
+.el{
+    margin: 20px 0;
+
+}
 
 
 

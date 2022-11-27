@@ -17,7 +17,7 @@
       <form action="/registration" method="POST">
           {% csrf_token %}
         <input type="text" class="form-control" placeholder="Логин" name="name" />
-        <input type="text" class="form-control" placeholder="Пароль" name="password" />
+        <input type="password" class="form-control" placeholder="Пароль" name="password" />
         <input type="text" class="form-control" placeholder="email" name="email" />
         <input type="submit" class="form-control btn-menu" value="Зарегистрироваться" />
       </form>
